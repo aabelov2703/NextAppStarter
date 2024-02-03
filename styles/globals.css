@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 33, 33, 33;
+  --background-start-rgb: 250, 235, 235;
+  --background-end-rgb: 240, 250, 250;
+}
+
+.dark {
+  --foreground-rgb: 217, 217, 217;
+  --background-start-rgb: 0 5 45;
+  --background-end-rgb: 0, 5, 5;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: radial-gradient(
+    circle at center,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+a:hover,
+button:hover {
+  color: #ffffff;
+  background-color: #212121;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.dark a:hover,
+.dark button:hover {
+  color: #212121;
+  background-color: #ffffff;
+}
+
+a {
+  padding: 4px 24px;
+}
+
+.higlhlighted {
+  background-color: #f0ffff;
+}
+.dark.higlhlighted {
+  background-color: #00292f;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.dark::-webkit-scrollbar-track {
+  background: #010101;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a9a9a9;
+  border-radius: 6px;
+}
+.dark::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+}
