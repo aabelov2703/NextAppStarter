@@ -10,7 +10,6 @@ const TopBtn = () => {
     setShow(window.scrollY > 50);
   };
 
-  console.log("show", show);
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -27,7 +26,6 @@ const TopBtn = () => {
 
   return (
     <Button
-      color="warning"
       onClick={scrollToTop}
       variant="contained"
       className={`fixed bottom-10 right-10 z-100 ${

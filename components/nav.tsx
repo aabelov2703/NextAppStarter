@@ -1,12 +1,12 @@
 "use client";
 import { useAppContext } from "@/context/appContext";
 import Link from "next/link";
-import Button from "./common/button";
 import { useEffect, useState } from "react";
 import { navOptions } from "@/context/objects";
 import BurgerSvg from "./ui/svg/burger";
+import Switch from "./common/switch";
 
-const NavOptions = ({ toggleTheme, theme, toggledNav, setToggledNav }: any) => {
+const NavOptions = ({ theme, setToggledNav, toggledNav }: any) => {
   return (
     <>
       {navOptions.map((option) => (
@@ -19,10 +19,10 @@ const NavOptions = ({ toggleTheme, theme, toggledNav, setToggledNav }: any) => {
           {option.name}
         </Link>
       ))}
-      <div className="sm:ml-auto ">
-        <Button onClick={toggleTheme}>
-          {`Set ${theme === "dark" ? "light" : "dark"}`}
-        </Button>
+      <div className="hidden sm:ml-auto sm:block">
+        <Switch
+          hint={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+        />
       </div>
     </>
   );

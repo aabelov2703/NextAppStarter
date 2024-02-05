@@ -8,11 +8,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        "m-d8": "#D8D8D8",
-        "m-eb": "#EBEBEB",
-        "m-green-0": "#55FF33",
-      },
+      colors: {},
       boxShadow: {
         "shadow-1": "0px 0px 24px 4px rgba(130, 140, 230, 0.7)",
         "shadow-2": "4px 4px 24px 4px rgba(130, 140, 230, 0.7)",
