@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Nav from "@/components/nav";
 import "@/styles/globals.css";
 import { AppContextProvider } from "@/context/appContext";
-import TopBtn from "@/components/ui/butons/top-btn";
+import TopBtn from "@/components/ui/buton/top-btn";
 
 export const metadata: Metadata = {
   title: "Base App",

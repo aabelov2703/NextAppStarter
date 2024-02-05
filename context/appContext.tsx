@@ -8,16 +8,10 @@ export const AppContextProvider: React.FC<AppContextProviderProps> = ({
   children,
 }) => {
   const [theme, setTheme] = useState("light");
-  const [toggleFilter, setToggleFilter] = useState<boolean>(false);
-  const [toggleMap, setToggleMap] = useState<boolean>(false);
 
   const appContextValues: AppContextProps = {
     theme,
     setTheme,
-    toggleFilter,
-    setToggleFilter,
-    toggleMap,
-    setToggleMap,
   };
 
   return (

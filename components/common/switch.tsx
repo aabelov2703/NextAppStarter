@@ -20,7 +20,7 @@ const Switch: React.FC<SwitchProps> = ({ hint, children }) => {
           style={styles.inner}
         ></div>
       </div>
-      <span className="ml-1 text-sm">{children}</span>
+      <span className="ml-2 text-sm">{children}</span>
     </div>
   );
 };

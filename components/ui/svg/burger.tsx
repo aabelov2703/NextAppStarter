@@ -1,9 +1,14 @@
-const BurgerSvg = ({ color }: any) => {
+import React from "react";
+
+const BurgerSvg: React.FC<{ className?: string; color?: string }> = ({
+  className = "",
+  color = "black",
+}) => {
   return (
     <svg
-      className="w-6 h-6"
+      className={`w-6 h-6 ${className} cursor-pointer`}
       fill="none"
-      stroke={`${color || "black"}`}
+      stroke={color}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >

@@ -29,6 +29,7 @@ body {
     rgb(var(--background-start-rgb)),
     rgb(var(--background-end-rgb))
   );
+  font-weight: 300;
 }
 
 @layer utilities {

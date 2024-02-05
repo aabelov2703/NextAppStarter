@@ -1,6 +1,6 @@
-const stylesColorMap = (theme: string, color: string): any => {
+export const stylesColorMap = (theme?: string, color?: string): any => {
   return {
-    bgColor:
+    backgroundColor:
       color === "success"
         ? theme === "dark"
           ? "var(--dark-success)"
@@ -58,11 +58,11 @@ export const calcBtn = (theme: string, props: any | undefined): any => {
 
   const hoverColors = isHover && {
     backgroundColor: colors.color,
-    color: colors.bgColor,
+    color: colors.backgroundColor,
   };
 
   return {
-    backgroundColor: colors.bgColor,
+    backgroundColor: colors.backgroundColor,
     color: colors.color,
     border: variant === "outlined" ? `${colors.color} solid 1px` : "none",
     padding,
@@ -70,7 +70,7 @@ export const calcBtn = (theme: string, props: any | undefined): any => {
     transition: "background-color 0.5s, color 0.3s",
     ":hover": {
       backgroundColor: colors.color,
-      color: colors.bgColor,
+      color: colors.backgroundColor,
     },
     ...hoverColors,
   };
@@ -82,17 +82,17 @@ export const calcSwitch = (theme: string) => {
     shadow: `inset 0px 0px 2px 0px ${colors.color}`,
   };
   const innerStyles = {
-    bgColor: theme === "dark" ? "var(--dark)" : "var(--light)",
+    backgroundColor: theme === "dark" ? "var(--dark)" : "var(--light)",
     shadow: `inset ${theme === "dark" ? "-" : ""}4px 1px 10px ${colors.color}`,
   };
 
   return {
     inner: {
-      backgroundColor: innerStyles.bgColor,
+      backgroundColor: innerStyles.backgroundColor,
       boxShadow: innerStyles.shadow,
     },
     outter: {
-      backgroundColor: colors.bgColor,
+      backgroundColor: colors.backgroundColor,
       boxShadow: outterStyles.shadow,
     },
   };

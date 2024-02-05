@@ -3,10 +3,6 @@ import { ReactNode } from "react";
 export interface AppContextProps {
   theme: string;
   setTheme: (theme: string) => void;
-  toggleFilter: boolean;
-  setToggleFilter: (toggleFilter: boolean) => void;
-  toggleMap: boolean;
-  setToggleMap: (toggleMap: boolean) => void;
 }
 
 export interface AppContextProviderProps {
@@ -23,5 +19,12 @@ export interface ButtonProps {
 
 export interface SwitchProps {
   hint?: string;
+  children?: React.ReactNode;
+}
+
+export interface DropdownProps {
+  onClick?: () => void;
+  header?: string;
+  className?: string;
   children?: React.ReactNode;
 }
