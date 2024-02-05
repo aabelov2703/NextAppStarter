@@ -1,29 +1,26 @@
+"use client";
 import { useAppContext } from "@/context/appContext";
 import { useState } from "react";
 import { calcBtn } from "@/utils/calcStyles";
+import { ButtonProps } from "@/types/props";
 
-const Button = ({
-  children,
-  onClick,
-  ...props
-}: {
-  children: React.ReactNode;
-  onClick: () => void;
-  [key: string]: any;
-}) => {
+const Button: React.FC<ButtonProps> = ({ onClick, children, ...props }) => {
   const { theme } = useAppContext();
   const [isHover, setIsHover] = useState<boolean>(false);
-  const { className = "" } = props;
 
   const btnStyles = calcBtn(theme, { ...props, isHover });
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    onClick && onClick(e);
+  };
 
   return (
     <button
       type="button"
-      onClick={onClick}
+      onClick={handleClick}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
-      className={`m-1 rounded-full ${className}`}
+      className={`m-1 rounded-full ${props?.className || ""}`}
       style={{
         ...btnStyles,
         ...(props?.style && props.style),

@@ -3,7 +3,7 @@ import Button from "@/components/common/button";
 import { useEffect, useState } from "react";
 import Chevron from "../svg/chevron";
 
-const TopBtn = () => {
+const TopBtn: React.FC = () => {
   const [show, setShow] = useState(false);
 
   const toggleShow = () => {

@@ -1,8 +1,8 @@
 import { useAppContext } from "@/context/appContext";
+import { SwitchProps } from "@/types/props";
 import { calcSwitch } from "@/utils/calcStyles";
-import React from "react";
 
-const Switch = ({ hint, children }: any) => {
+const Switch: React.FC<SwitchProps> = ({ hint, children }) => {
   const { theme, setTheme } = useAppContext();
   const styles = calcSwitch(theme);
 
@@ -15,7 +15,7 @@ const Switch = ({ hint, children }: any) => {
       >
         <div
           className={`${theme} absolute left-[2px] top-[1px] w-[20px] h-[20px] rounded-full transition-transform duration-300 ${
-            theme === "light" ? "translate-x-[15px]" : ""
+            theme === "light" ? "translate-x-[14px]" : ""
           }`}
           style={styles.inner}
         ></div>

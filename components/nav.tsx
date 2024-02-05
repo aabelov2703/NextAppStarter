@@ -28,7 +28,7 @@ const NavOptions = ({ theme, setToggledNav, toggledNav }: any) => {
   );
 };
 
-const Nav = () => {
+const Nav: React.FC = () => {
   const { theme, setTheme } = useAppContext();
   const [toggledNav, setToggledNav] = useState(false);
 
@@ -54,7 +54,7 @@ const Nav = () => {
       <nav className="w-full sm:hidden h-10 py-3 px-4 relative ">
         {toggledNav ? (
           <div
-            className={`absolute left-0 top-5 flex flex-col justify-between gap-1 w-full higlhlighted  ${theme}`}
+            className={`absolute left-0 top-5 flex flex-col justify-between gap-1 w-full highlighted ${theme}`}
           >
             <NavOptions
               toggleTheme={toggleTheme}

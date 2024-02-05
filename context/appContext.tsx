@@ -1,5 +1,5 @@
 "use client";
-import { AppContextProps, AppContextProviderProps } from "@/types/types";
+import { AppContextProps, AppContextProviderProps } from "@/types/props";
 import React, { createContext, useContext, useState } from "react";
 
 const AppContext = createContext<AppContextProps | undefined>(undefined);

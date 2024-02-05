@@ -77,17 +77,23 @@ export const calcBtn = (theme: string, props: any | undefined): any => {
 };
 
 export const calcSwitch = (theme: string) => {
-  const outterStyles = { colors: stylesColorMap(theme, "") };
+  const colors = stylesColorMap(theme, "");
+  const outterStyles = {
+    shadow: `inset 0px 0px 2px 0px ${colors.color}`,
+  };
   const innerStyles = {
-    bgColor: theme === "dark" ? "var(--light)" : "var(--dark)",
-    border: theme === "dark" ? `var()` : ``,
+    bgColor: theme === "dark" ? "var(--dark)" : "var(--light)",
+    shadow: `inset ${theme === "dark" ? "-" : ""}4px 1px 10px ${colors.color}`,
   };
 
   return {
-    inner: { backgroundColor: innerStyles.bgColor, border: innerStyles.border },
+    inner: {
+      backgroundColor: innerStyles.bgColor,
+      boxShadow: innerStyles.shadow,
+    },
     outter: {
-      backgroundColor: outterStyles.colors.bgColor,
-      border: outterStyles.colors.border,
+      backgroundColor: colors.bgColor,
+      boxShadow: outterStyles.shadow,
     },
   };
 };

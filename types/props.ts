@@ -12,3 +12,16 @@ export interface AppContextProps {
 export interface AppContextProviderProps {
   children: ReactNode;
 }
+
+export interface ButtonProps {
+  children?: React.ReactNode;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  className?: string;
+  style?: React.CSSProperties;
+  [key: string]: any;
+}
+
+export interface SwitchProps {
+  hint?: string;
+  children?: React.ReactNode;
+}
