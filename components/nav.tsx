@@ -23,6 +23,7 @@ const NavOptions = () => {
 
 const Nav: React.FC = () => {
   const { theme } = useAppContext();
+  const navStyles = `w-full fixed h-10 py-2 px-4 ${theme}`;
 
   useEffect(() => {
     document.body.classList.toggle("dark", theme === "dark");
@@ -30,10 +31,10 @@ const Nav: React.FC = () => {
 
   return (
     <>
-      <nav className="w-full h-10 hidden sm:flex sm:items-center sm:my-4 gap-2 px-4">
+      <nav className={`hidden sm:flex sm:items-center gap-2 ${navStyles}`}>
         <NavOptions />
       </nav>
-      <nav className="w-full flex justify-between sm:hidden h-10 py-3 px-4">
+      <nav className={`flex justify-between sm:hidden ${navStyles}`}>
         <BurgerBtn>
           <NavOptions />
         </BurgerBtn>

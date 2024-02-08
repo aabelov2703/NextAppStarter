@@ -21,7 +21,7 @@ export default function RootLayout({
           <main className="flex items-center flex-col relative">
             <TopBtn />
             <Nav />
-            <section className="flex flex-col max-w-[1128px] w-full items-center mb-10 ">
+            <section className="flex flex-col max-w-[1128px] w-full items-center my-10">
               {children}
             </section>
           </main>

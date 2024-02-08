@@ -32,6 +32,15 @@ body {
   font-weight: 300;
 }
 
+nav,
+.highlighted {
+  background-color: #d7f1ff;
+}
+nav.dark,
+.dark.highlighted {
+  background-color: #00233b;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -53,13 +62,6 @@ button:hover {
 
 a {
   padding: 4px 24px;
-}
-
-.highlighted {
-  background-color: #d7f1ff;
-}
-.dark.highlighted {
-  background-color: #00233b;
 }
 
 ::-webkit-scrollbar {
