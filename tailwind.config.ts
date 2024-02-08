@@ -12,8 +12,6 @@ const config: Config = {
       boxShadow: {
         "shadow-1": "0px 0px 24px 4px rgba(130, 140, 230, 0.7)",
         "shadow-2": "4px 4px 24px 4px rgba(130, 140, 230, 0.7)",
-        "shadow-light": "4px 4px 24px 4px rgba(215, 236, 255, 0.75)",
-        "shadow-dark": "4px 4px 24px 4px rgba(50, 30, 10, 0.75)",
       },
     },
   },
