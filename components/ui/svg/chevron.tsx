@@ -1,5 +1,3 @@
-import React from "react";
-
 const Chevron = ({ direction, size = 24, color = "black", ...rest }: any) => {
   if (direction === "up")
     return (
@@ -8,7 +6,7 @@ const Chevron = ({ direction, size = 24, color = "black", ...rest }: any) => {
         width={size}
         height={size}
         viewBox="0 0 20 20"
-        fill={color}
+        fill="currentColor"
         {...rest}
       >
         <path

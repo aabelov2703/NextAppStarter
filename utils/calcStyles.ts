@@ -13,6 +13,10 @@ export const stylesColorMap = (theme?: string, color?: string): any => {
         ? theme === "dark"
           ? "var(--dark-warning)"
           : "var(--light-warning)"
+        : color === "disabled"
+        ? theme === "dark"
+          ? "var(--dark-disabled)"
+          : "var(--light-disabled)"
         : theme === "dark"
         ? "var(--dark)"
         : "var(--light)",
@@ -25,6 +29,10 @@ export const stylesColorMap = (theme?: string, color?: string): any => {
         ? theme === "dark"
           ? "var(--light-error)"
           : "var(--dark-error)"
+        : color === "disabled"
+        ? theme === "dark"
+          ? "var(--light-disabled)"
+          : "var(--dark-disabled)"
         : color === "warning"
         ? theme === "dark"
           ? "var(--light-warning)"
@@ -49,10 +57,10 @@ const stylesFontSize = (size: string): string => {
 
 export const calcBtn = (theme: string, props: any | undefined): any => {
   const color = props?.color || "";
-  const variant = props?.variant || "outlined";
+  const variant = props?.variant || "";
   const size = props?.size || "";
   const isHover = props?.isHover;
-  const colors = stylesColorMap(theme, color);
+  const colors = stylesColorMap(theme, props?.disabled ? "disabled" : color);
   const padding = stylesPaddingMap(size);
   const fontSize = stylesFontSize(size);
 
@@ -68,10 +76,6 @@ export const calcBtn = (theme: string, props: any | undefined): any => {
     padding,
     fontSize,
     transition: "background-color 0.5s, color 0.3s",
-    ":hover": {
-      backgroundColor: colors.color,
-      color: colors.backgroundColor,
-    },
     ...hoverColors,
   };
 };

@@ -1,8 +1,8 @@
 import { useAppContext } from "@/context/appContext";
-import { SwitchProps } from "@/types/props";
+import { Props } from "@/types/props";
 import { calcSwitch } from "@/utils/calcStyles";
 
-const Switch: React.FC<SwitchProps> = ({ hint, children }) => {
+const Switch: React.FC<Props> = ({ hint, children }) => {
   const { theme, setTheme } = useAppContext();
   const styles = calcSwitch(theme);
 

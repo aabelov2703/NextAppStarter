@@ -1,11 +1,9 @@
 "use client";
-import { useAppContext } from "@/context/appContext";
 import { useEffect, useState } from "react";
 import Button from "@/components/common/button";
 import Chevron from "../svg/chevron";
 
 const TopBtn: React.FC = () => {
-  const { theme } = useAppContext();
   const [show, setShow] = useState(false);
 
   const toggleShow = () => {
@@ -35,11 +33,7 @@ const TopBtn: React.FC = () => {
       } shadow-shadow-1`}
       style={{ padding: "0px 4px 4px 4px" }}
     >
-      <Chevron
-        direction="up"
-        size="40"
-        color={theme === "dark" ? "var(--light)" : "var(--dark)"}
-      />
+      <Chevron direction="up" size="40" />
     </Button>
   );
 };

@@ -19,12 +19,12 @@ export default function RootLayout({
     <html lang="en">
       <AppContextProvider>
         <body className="min-h-screen flex">
+          <Nav />
           <main className="flex flex-1 items-center flex-col relative ">
             <TopBtn />
-            <Nav />
-            <section className="flex flex-col max-w-[1024px] w-full mt-10 sm:px-5 flex-1">
+            <article className="max-w-[1024px] w-full mt-10 flex-1">
               <Container>{children}</Container>
-            </section>
+            </article>
           </main>
         </body>
       </AppContextProvider>

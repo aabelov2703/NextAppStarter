@@ -1,11 +1,11 @@
 import { useAppContext } from "@/context/appContext";
-import { DropdownProps } from "@/types/props";
+import { ClickableProps } from "@/types/props";
 
-const Dropdown: React.FC<DropdownProps> = ({
+const Dropdown: React.FC<ClickableProps> = ({
   onClick,
-  header,
   className,
   children,
+  ...props
 }) => {
   const { theme } = useAppContext();
 
@@ -18,7 +18,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       className={`fixed top-0 flex flex-col gap-2 justify-end inset-x-0 m-2 px-6 py-2 highlighted ${theme} ${className}`}
       onClick={handleClick}
     >
-      {header && <p>{header}</p>}
+      {props.header && <p>{props.header}</p>}
       {children}
     </div>
   );

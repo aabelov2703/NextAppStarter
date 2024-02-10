@@ -2,15 +2,16 @@
 import { useAppContext } from "@/context/appContext";
 import { useState } from "react";
 import { calcBtn } from "@/utils/calcStyles";
-import { ButtonProps } from "@/types/props";
+import { ClickableProps } from "@/types/props";
 
-const Button: React.FC<ButtonProps> = ({ onClick, children, ...props }) => {
+const Button: React.FC<ClickableProps> = ({ onClick, children, ...props }) => {
   const { theme } = useAppContext();
   const [isHover, setIsHover] = useState<boolean>(false);
 
   const btnStyles = calcBtn(theme, { ...props, isHover });
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setIsHover(false);
     onClick && onClick(e);
   };
 
@@ -25,6 +26,7 @@ const Button: React.FC<ButtonProps> = ({ onClick, children, ...props }) => {
         ...btnStyles,
         ...(props?.style && props.style),
       }}
+      disabled={props?.disabled}
     >
       {children}
     </button>

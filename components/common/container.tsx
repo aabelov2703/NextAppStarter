@@ -1,15 +1,10 @@
-"use client";
-import { useAppContext } from "@/context/appContext";
+import { BaseProps } from "@/types/props";
 
-const Container: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { theme } = useAppContext();
+const Container: React.FC<BaseProps> = ({ children, className, style }) => {
   return (
     <div
-      className={`w-full flex justify-center p-2 flex-1`}
-      style={{
-        boxShadow:
-          theme === "dark" ? "var(--shadow-dark)" : "var(--shadow-light)",
-      }}
+      className={`w-full flex justify-center p-4 sm:p-8 flex-1 ${className}`}
+      style={style}
     >
       {children}
     </div>

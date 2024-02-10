@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { navOptions } from "@/context/objects";
 import CogBtn from "./ui/buton/cog-btn";
 import BurgerBtn from "./ui/buton/burger-btn";
+import Button from "./common/button";
 
 const NavOptions = () => {
   return (
@@ -14,16 +15,24 @@ const NavOptions = () => {
           {option.name}
         </Link>
       ))}
-      <div className="hidden sm:ml-auto sm:flex ml-4">
+      <Button
+        className="hidden sm:ml-auto sm:flex ml-4"
+        variant="contained"
+        style={{
+          padding: 0,
+          width: 24,
+          height: 24,
+        }}
+      >
         <CogBtn />
-      </div>
+      </Button>
     </>
   );
 };
 
 const Nav: React.FC = () => {
   const { theme } = useAppContext();
-  const navStyles = `w-full fixed h-10 py-2 px-4 ${theme}`;
+  const navStyles = `w-full fixed h-10 py-2 px-4 ${theme} z-10`;
 
   useEffect(() => {
     document.body.classList.toggle("dark", theme === "dark");

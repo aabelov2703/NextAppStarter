@@ -20,14 +20,21 @@ const CogBtn: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
   };
 
   return (
-    <div ref={ref}>
+    <div
+      ref={ref}
+      style={
+        theme === "light"
+          ? { backgroundColor: "var(--light)", color: "var(--dark)" }
+          : { backgroundColor: "var(--dark)", color: "var(--light)" }
+      }
+    >
       {toggle ? (
         <Dropdown onClick={handleClick} header="Settings">
           <Switch hint={strHint}>{strHint}</Switch>
         </Dropdown>
       ) : (
         <div onClick={handleClick}>
-          <Cog color={theme === "dark" ? "var(--light)" : "var(--dark)"} />
+          <Cog />
         </div>
       )}
     </div>

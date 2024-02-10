@@ -1,12 +1,10 @@
 "use client";
-import { AppContextProps, AppContextProviderProps } from "@/types/props";
+import { AppContextProps, BaseProps } from "@/types/props";
 import React, { createContext, useContext, useState } from "react";
 
 const AppContext = createContext<AppContextProps | undefined>(undefined);
 
-export const AppContextProvider: React.FC<AppContextProviderProps> = ({
-  children,
-}) => {
+export const AppContextProvider: React.FC<BaseProps> = ({ children }) => {
   const [theme, setTheme] = useState("light");
 
   const appContextValues: AppContextProps = {

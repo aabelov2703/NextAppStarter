@@ -5,26 +5,26 @@ export interface AppContextProps {
   setTheme: (theme: string) => void;
 }
 
-export interface AppContextProviderProps {
-  children: ReactNode;
-}
-
-export interface ButtonProps {
-  children?: React.ReactNode;
-  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+export interface BaseProps {
+  children?: ReactNode;
   className?: string;
   style?: React.CSSProperties;
+}
+
+export interface Props extends BaseProps {
   [key: string]: any;
 }
 
-export interface SwitchProps {
-  hint?: string;
-  children?: React.ReactNode;
+export interface Disabled {
+  disabled?: boolean;
 }
 
-export interface DropdownProps {
-  onClick?: () => void;
-  header?: string;
-  className?: string;
-  children?: React.ReactNode;
+export interface ClickableProps extends BaseProps, Disabled, Props {
+  onClick?: (e?: React.MouseEvent<HTMLButtonElement> | null) => void;
 }
+
+export interface ChangableProps extends BaseProps, Disabled, Props {
+  onChange?: (e?: React.ChangeEvent<HTMLInputElement> | null) => void;
+}
+
+export interface CommonProps extends ClickableProps, ChangableProps {}

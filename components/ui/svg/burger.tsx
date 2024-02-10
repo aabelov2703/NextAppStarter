@@ -1,5 +1,3 @@
-import React from "react";
-
 const BurgerSvg: React.FC<{ className?: string; color?: string }> = ({
   className = "",
   color = "black",

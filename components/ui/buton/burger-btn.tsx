@@ -3,11 +3,9 @@ import { useRef, useState } from "react";
 import BurgerSvg from "../svg/burger";
 import Dropdown from "@/components/common/dropdown";
 import useOutsideClick from "@/hooks/use-outside-click";
+import { ClickableProps } from "@/types/props";
 
-const BurgerBtn: React.FC<{
-  onClick?: () => void;
-  children?: React.ReactNode;
-}> = ({ onClick, children }) => {
+const BurgerBtn: React.FC<ClickableProps> = ({ onClick, children }) => {
   const { theme } = useAppContext();
   const [toggle, setToggle] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
