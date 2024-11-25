@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import Nav from "@/components/nav";
-import "@/styles/globals.css";
-import { AppContextProvider } from "@/context/appContext";
-import TopBtn from "@/components/ui/buton/top-btn";
-import Container from "@/components/common/container";
+import "./globals.css";
+import { AppContextProvider } from "@/context/app-context";
+import Footer from "@/components/footer";
+import { ThemeProvider } from "@/context/theme-context";
+import NavBar from "@/components/nav/nav-bar";
 
 export const metadata: Metadata = {
-  title: "Base App",
-  description: "Basement",
+  title: "Next",
+  description: "Base Layer",
 };
 
 export default function RootLayout({
@@ -17,17 +17,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <AppContextProvider>
-        <body className="min-h-screen flex">
-          <Nav />
-          <main className="flex flex-1 items-center flex-col relative ">
-            <TopBtn />
-            <article className="max-w-[1024px] w-full mt-10 flex-1">
-              <Container>{children}</Container>
-            </article>
-          </main>
-        </body>
-      </AppContextProvider>
+      <body className="flex flex-col items-center min-h-screen text-foreground bg-background">
+        <ThemeProvider>
+          <AppContextProvider>
+            <NavBar />
+            <main className="flex grow w-full min-w-[300px] lg:w-[1024px] mt-10 p-4 md:p-8">
+              {children}
+            </main>
+            <Footer />
+          </AppContextProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
